@@ -1,0 +1,54 @@
+﻿@{
+    var themeMode = Context.Request.Cookies["ThemeMode"] ?? "Light";
+    var isDark = (themeMode == "dark") ? true : false;
+
+}
+
+<!DOCTYPE html>
+<html lang="sv-se">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/07486d9066.js" crossorigin="anonymous"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/css/home.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/headerAndfooter.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/components.css" asp-append-version="true" />
+    @if (themeMode == "dark")
+    {
+        <link rel="stylesheet" href="~/css/dark.css" asp-append-version="true" />
+    }
+    else
+    {
+        <link rel="stylesheet" href="~/css/components.css" asp-append-version="true" />
+    }
+
+    <title>@ViewData["Title"] - Silicon</title>
+
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <partial name="~/Views/Shared/HeaderAndFooter/_Header.cshtml" />
+        </header>
+        <main>
+            @RenderBody()
+        </main>
+
+        <footer>
+            <partial name="~/Views/shared/HeaderAndFooter/_Footer.cshtml" />
+        </footer>
+    </div>
+
+
+    @await Html.PartialAsync("_validationScriptPartial")
+    <partial name="_CookieConsent.cshtml" />
+    <script src="~/js/site.js" asp-append-version="true"></script>
+</body>
+</html>
+
+
+

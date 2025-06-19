@@ -1,0 +1,62 @@
+﻿@model AccountDetailsViewModel
+@{
+    var user = await UserManager.GetUserAsync(User);
+}
+<link rel="stylesheet" href="~/css/AccountDetails.css" asp-append-version="true" />
+@* <link rel="stylesheet" href="~/css/dark.css" asp-append-version="true" /> *@
+
+
+    <aside class="profile">
+
+    @if (user != null)
+    {
+
+        <div class="min-profil">
+            <div class="profil-avatar">
+                <div class="avatar-container">
+                    <a href="/account/details">
+                        <img src="~/uploads/@user.ProfilImage" alt="avatar">
+                    </a>
+                </div>
+
+                <form enctype="multipart/form-data" method="post" asp-action="UploadImage" asp-controller="Account">
+                    <input id="UploadFile" type="file" name="file" hidden />
+                    <label for="UploadFile" class="btn btn-circle btn-circle-sm"><i class="fa-regular fa-refresh"></i></label>
+                </form>
+
+            </div>
+           
+            
+
+            @if (Model != null && Model!.ProfileInfo != null)
+            {
+                <h3>@Model!.ProfileInfo.FirstName @Model.ProfileInfo.LastName</h3>
+                <p>@Model.ProfileInfo.Email</p>
+            }
+        </div>
+
+    }
+
+
+        <nav class="controllers">
+        <a class="btn-trans" asp-controller="Account" asp-action="Details">
+                <img src="~/Images/bx-cog.svg" alt="">
+                <span class="btn-text">Account Details</span>
+            </a>
+
+        <a class="btn-trans" asp-controller="Security" asp-action="Security">
+                <img src="~/Images/bx-lock-alt.svg" alt="">
+                <span class="btn-text">Security</span>
+            </a>
+        <a class="btn-trans" asp-controller="SavedCourses" asp-action="SavedCourses">
+                <img class="bookmark" src="~/Images/savedcourse.svg" alt="">
+                <span class="btn-text">Saved Courses</span>
+            </a>
+            <a class="btn-trans" asp-controller="Auth" asp-action="SignOut">
+                <img src="~/Images/bx-log-out.svg" alt="">
+                <span class="btn-text">Sign Out</span>
+            </a>
+        </nav>
+
+
+    </aside>

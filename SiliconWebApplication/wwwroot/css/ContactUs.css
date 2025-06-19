@@ -1,0 +1,162 @@
+﻿body {
+    background-color: #eff0fc;
+}
+
+main {
+    position: relative;
+}
+
+.homeIcon {
+    display: flex;
+    align-items: center;
+    margin-top: 60px;
+    margin-bottom: 40px;
+}
+
+@media (max-width: 972px) {
+    .homeIcon {
+        margin-left: 30px;
+    }
+}
+
+.homeIcon img {
+    width: 16px;
+    height: 18px;
+    margin-right: 8px;
+}
+
+.homeIcon h6 {
+    margin: 0 12px;
+}
+
+.sectionContact {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    margin-bottom: 50px;
+    gap: 60px;
+}
+
+@media (max-width: 972px) {
+    .sectionContact {
+        margin-left: 30px;
+    }
+}
+
+.contacts {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+
+.getContact {
+    position: absolute;
+    right: 0;
+    top: 60px;
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    height: auto;
+    padding: 70px 60px;
+    background-color: #fff !important;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    box-shadow: #fefefe;
+}
+
+@media (max-width: 972px) {
+    .getContact {
+        position: static;
+        width: 100%;
+        margin: 20px;
+    }
+}
+
+.getContact form {
+    display: flex;
+    flex-direction: column;
+}
+
+.getContact .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px; 
+}
+
+.getContact input[type="text"],
+.getContact input[type="email"],
+.getContact textarea {
+    width: 100%;
+    border-radius: 8px;
+    border: 2px solid #eee;
+    padding: 10px;
+}
+.black {
+    color: #000;
+}
+.getContact textarea {
+    resize: none;
+}
+
+.getContact button {
+    width: 100%;
+    border-radius: 8px;
+    background-color: #6366f1;
+    color:#fff;
+    border: 2px solid #eee;
+    padding: 10px;
+    margin-top: 10px; 
+}
+
+    .getContact button:hover {
+        background-color: #f3f6f9;
+        color:#090909;
+    }
+
+.dropbtn {
+    width: 100%;
+    border-radius: 8px;
+    background-color: #ffffff;
+    border: 2px solid rgb(238, 238, 238);
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #f3f6f9;
+}
+
+    .dropdown:hover .dropbtn::placeholder {
+        color: #fff;
+    }

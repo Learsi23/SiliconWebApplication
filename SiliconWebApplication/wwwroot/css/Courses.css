@@ -1,0 +1,327 @@
+﻿
+
+.coursesList .container {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 30px;
+}
+
+.homeIcon {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin: 0;
+    padding: 20px 0px;
+    gap: 10px;
+}
+
+    .homeIcon img {
+        padding-bottom: 10px;
+    }
+
+.courses {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media (max-width: 992px) {
+    .courses {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+    }
+}
+
+.courses input {
+    margin-left: 20px;
+    border: 1px solid #cecccc;
+    border-radius: 8px;
+    padding: 8px 32px;
+}
+#searchQuery {
+    margin: 0;
+}
+
+@media (max-width: 792px) {
+    .courses input {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+}
+
+.items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 10px;
+}
+
+@media (max-width: 1400px) {
+    .items {
+        grid-template-columns: repeat(3, minmax(300px, 1fr));
+        max-width: 1200px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .items {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .cardCourses .cardImage {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 997px) {
+    .items{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px;
+    }
+
+    .cardCourses .cardImage {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/*---------------------------------------------------*/
+
+.select {
+    position: relative;
+    display: inline-flex;
+    gap: 20px;
+    width: auto;
+}
+
+    .select .selected {
+        display: inline-block;
+        padding: 8px 16px; /* ajusta el relleno para que el elemento seleccionado sea más ancho */
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        cursor: pointer;
+        min-width: 150px; /* ajusta el ancho mínimo del elemento seleccionado */
+    }
+
+        .select .selected:hover {
+            background-color: #f0f0f0;
+            color:#090909;
+        }
+
+    .select.active .select-options {
+        display: block;
+    }
+
+    .select .select-options {
+        display: none;
+        position: absolute;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        padding: 5px;
+        width: 100%;
+        z-index: 1;
+        top: 100%;
+        left: 0;
+    }
+
+    .select .option {
+        padding: 5px;
+        cursor: pointer;
+    }
+
+        .select .option:hover {
+            background-color: #f0f0f0;
+        }
+
+.input-search-group {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+
+    .input-search-group input {
+        flex: 1;
+        padding-right: 30px; 
+    }
+
+    .input-search-group i {
+        position: absolute;
+        right: 15px; 
+    }
+/*---------------------------------------------------*/
+.cardCourses {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    position: relative;
+    border: 1px solid #cdcbcb;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+
+}
+    .cardCourses:hover {
+        transform: scale(1.05);
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
+    }
+
+    .cardCourses .cardImage {
+        max-width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+.courseIcon {
+    position: absolute;
+    border:none;
+    background-color:transparent;
+    right: 20px;
+    top: 40px;
+}
+
+.bestSeller {
+    position: absolute;
+    top: 40px;
+    left: 20px;
+}
+
+.cardText {
+    padding: 20px;
+}
+
+.watch {
+    display: flex;
+    gap: 40px;
+}
+
+/*-----PAGINATION-------*/
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin: 50px 0;
+}
+
+    .pagination .number {
+        margin: 0 5px;
+        padding: 8px 12px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+        color: #333;
+    }
+
+        .pagination .number.active {
+            background-color: #007bff;
+            color: #fff;
+            border-color: #007bff;
+        }
+
+
+
+
+.workwithUs {
+    background-color: #eff0fc;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    margin: 70px 0px;
+    padding: 60px 120px;   
+    border-radius: 8px;
+}
+.workwithUs .work1{
+    display:flex;
+    flex-direction:column;
+    justify-content:center; 
+    padding-left:80px;
+    text-align:left;
+}
+    .workwithUs button {
+        display: inline-flex;
+        margin-top: 40px;
+        width:200px;
+        
+    }
+
+    @media (max-width: 997px) {
+        .workwithUs {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap:80px;
+    }
+
+        .workwithUs button {
+            margin-top: 40px;
+            display: inline-flex;
+        }
+}
+
+/* ---------------------------------- */
+
+
+.dropbtn {
+    width: 100%;
+    border-radius: 8px;
+    background-color: #ffffff;
+    border: 2px solid rgb(238, 238, 238);
+    padding: 10px;
+    margin-bottom: 20px;
+   /*  line-height: 160%;
+    font-weight: 400;
+    color: #565973;
+    font-family: "Manrope", sans-serif;
+    color: #6366F1;
+    text-decoration: none;
+    transition: all 0.25s ease-in-out;
+    width: 400px; */
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding:20px;
+    z-index: 1;
+}
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #6366F1;
+}
+
+    .dropdown:hover .dropbtn::placeholder {
+        color: #fff;
+    }

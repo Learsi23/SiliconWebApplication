@@ -1,0 +1,139 @@
+﻿@model CoursesViewModel
+
+@{
+    ViewData["Title"] = "Courses";
+}
+<link rel="stylesheet" href="~/css/Courses.css" asp-append-version="true" />
+
+
+
+
+<section class ="coursesList">
+    <div class="container">
+        <div class="homeIcon">
+            <img src="~/Images/homeIcon.svg" alt="">
+            <h4 class="h4gray">Home</h4>
+            <img src="~/Images/rightArrow.svg" alt="">
+            <h4 class="blue">Courses</h4>
+        </div>
+        <div class="courses">
+            <h1>Courses</h1>
+
+            <form class="filters">
+                <div class="select">
+                    <div class="selected">All Categories</div>
+                    <div class="select-options">
+                        <div class="option" data-value="all">All Categories</div>
+                        @if (Model.Category != null)
+                        {
+                            foreach (var item in Model.Category)
+                            {
+                                <div class="option" data-value="@item.CategoryName">@item.CategoryName</div>
+                            }
+                        }
+                    </div>
+                    <div class="input-search-group">
+                        <input id="searchQuery" name="searchQuery" type="text" placeholder="Search courses">
+                        <i class="fa-regular fa-search"></i>
+                    </div>
+                </div>
+            </form>
+          
+
+        </div>
+
+
+  
+         <div class="items">
+
+                @foreach (var item in Model.CourseModel!)
+                {
+
+                    <div class="cardCourses">
+                        @if (item.IsBestSeller)
+                        {
+                            <img class="bestSeller" src="~/Images/badge.png" alt="">
+
+                        }
+
+                        <img class="cardImage" src="~/Images/@item.ImageName" alt="">
+
+                        <form method="post" action="@Url.Action("SaveCourse", "SavedCourses")">
+                            <input type="hidden" name="courseId" value="@item.Id" />
+                            <button class="courseIcon" type="submit"><img src="~/Images/S.svg" alt=""></button>
+                        </form>
+
+                        <div class="cardText">
+
+                            <a href="@Url.Action("SingleCourse", "SingleCourse", new { courseId = item.Id })">
+                                <h5>@item.Title</h5>
+                            </a>
+
+                            <p class="text-s">@item.Author</p>
+                            @if (@item.Discount > 0)
+                            {
+                                <span class="red">$ @item.Price </span>
+                                <span class="gray">$ @item.Discount </span>
+
+
+                            }
+                            else
+                            {
+                                <span class="blue">$ @item.Price</span>
+                            }
+
+                            <hr>
+                            <div class="watch">
+
+                                <div class="hours">
+                                    <p class="text-s"><i class="fa-regular fa-clock"></i> @item.Hours hours</p>
+                                </div>
+                                <div class="likes">
+                                    <img src="~/Images/like.svg" alt="">
+                                    <span>@($"{item.LikesNumbers}%")</span>
+                                    <span class="text-s">(@($"{item.LikesProcent}k"))</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+
+        </div>
+     </div>
+
+    @if (Model.pagination != null && Model.pagination.TotalPages > 1)
+    {
+        <div class="pagination">
+            @for (int i = 1; i <= Model.pagination.TotalPages; i++)
+            {
+                if (i == Model.pagination.CurrentPage)
+                {
+                    <span class="number active">@i</span>
+                }
+                else
+                {
+                    <a class="number" href="@Url.Action("Courses", new { pageNumber = i, pageSize = Model.pagination.PageSize })">@i</a>
+                }
+            }
+        </div>
+    }
+   
+
+</section>
+
+
+<section class="container">
+    <div class="workwithUs">
+        <div class="work1">
+            <h4 class="text-lead">Ready to get started?</h4>
+            <h1>Take Your <span>Skills</span> to the Next Level</h1>
+            <button class="btn-theme-s">Work with us</button>
+        </div>
+        <div class="work1">
+            <img src="~/Images/WorkIllustration.svg" alt="">
+        </div>
+    </div>
+</section> 
+
+

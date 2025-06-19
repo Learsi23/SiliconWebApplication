@@ -1,0 +1,72 @@
+﻿.signIn .container {
+    display: flex;
+    justify-content: center;
+}
+
+.sigInForm {
+    display: block;
+    width: 40%;
+  
+}
+
+@media (max-width: 768px) {
+    .sigInForm {
+        display: block;
+        width: 100%;
+        padding: 20px;
+    }
+}
+@media (max-width: 1200px) {
+    .sigInForm {
+        display: block;
+        justify-content:center;
+        width: 100%;
+        padding: 20px;
+    }
+}
+span {
+    display:flex;
+    color: red;
+}
+.errorEmail { 
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color: #090909;
+    background-color:aliceblue;
+    padding:12px;
+    border-radius:8px;
+}
+.sigInForm button {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    box-shadow: 8px 10px 7px rgba(0, 0, 0, 0.1);
+}
+
+.sigInForm .signin-box input {
+    width: 100%;
+    border-radius: 8px;
+    border: 2px solid rgb(238, 238, 238);
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.forgot  {
+    display:flex;
+    justify-content:center;
+    text-align: center;
+    font-size: 14px;
+}
+
+.networkButtons {
+    display: flex;
+    justify-content:space-around;  
+    margin-top:30px;
+}
+
+@media (max-width: 768px) {
+    .networkButtons {
+        display: block;
+    }
+}

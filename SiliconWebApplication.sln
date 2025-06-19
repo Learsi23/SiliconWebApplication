@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34714.143
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiliconWebApplication", "SiliconWebApplication\SiliconWebApplication.csproj", "{0798ED6E-6DB7-4FFC-AF42-94FEFD6B4F69}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{BB8F96AB-1B28-48CE-B569-0C1393F95A09}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0798ED6E-6DB7-4FFC-AF42-94FEFD6B4F69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0798ED6E-6DB7-4FFC-AF42-94FEFD6B4F69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0798ED6E-6DB7-4FFC-AF42-94FEFD6B4F69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0798ED6E-6DB7-4FFC-AF42-94FEFD6B4F69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB8F96AB-1B28-48CE-B569-0C1393F95A09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB8F96AB-1B28-48CE-B569-0C1393F95A09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB8F96AB-1B28-48CE-B569-0C1393F95A09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB8F96AB-1B28-48CE-B569-0C1393F95A09}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {02C134A5-7499-4002-B167-FF3A7E00F055}
+	EndGlobalSection
+EndGlobal

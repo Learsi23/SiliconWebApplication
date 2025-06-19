@@ -1,0 +1,84 @@
+﻿@model SiliconWebApplication.DTOs.ContactDto
+
+@{
+    ViewData["Title"] = "Contact";
+}
+
+<link rel="stylesheet" href="~/css/ContactUs.css" asp-append-version="true" />
+
+
+
+
+    <main class="container">
+        <section>
+            <div class="homeIcon">
+                <img src="/Images/homeIcon.svg" alt="">
+                <h6 class="h6gray">Home</h6>
+                <img src="~/Images/rightArrow.svg" alt="">
+                <h6 class="blue">Courses</h6>
+            </div>
+        </section>
+
+        <section class="sectionContact">
+            <h3>Contact Us</h3>
+            <div class="contacts">
+                <img src="~/Images/email.svg" alt="">
+                <div class="emailUs">
+                    <h5>Email Us</h5>
+                    <p class="text-xs">Please feel free to drop us a line. We will respond as soon as possible.</p>
+                    <a asp-controller="Contact" asp-action="LeaveMessage">Leave a message <img src="~/Images/arroeblue.svg" alt=""></a>
+                </div>
+            </div>
+            <div class="contacts">
+                <img src="/Images/careers.svg" alt="">
+                <div class="emailUs">
+                    <h5>Careers</h5>
+                    <p class="text-xs">Sit ac ipsum leo lorem magna nunc mattis maecenas non vestibulum.</p>
+                    <a asp-controller="Careers" asp-action="SendApplication">Send an application <img src="~/Images/arroeblue.svg" alt=""></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="getContact">
+            <h3>Get In Contact With Us</h3>
+            <form asp-controller="Contact" asp-action="SendRequest" method="post">
+                <div class="form-group">
+                    <label asp-for="FullName" class="black">Full name</label>
+                    <input asp-for="FullName" class="form-control" placeholder="Enter your full name" required />
+                    <span asp-validation-for="FullName" class="red"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="EmailAddress" class="black">Email address</label>
+                    <input asp-for="EmailAddress" class="form-control" placeholder="Enter your email address" required />
+                    <span asp-validation-for="EmailAddress" class="red"></span>
+                </div>
+
+                <div class="dropdown">
+                    <label class="black">Services</label>
+                    <select asp-for="Service" class="dropbtn" required>
+                        <option value="">Choose the service you are interested in</option>
+                        <option value="CSS & CSS3: basic">CSS & CSS3: basic</option>
+                        <option value="Understanding APIs">Understanding APIs</option>
+                        <option value="C# and .NET for beginners">C# and .NET for beginners</option>
+                    </select>
+                    <span asp-validation-for="Service" class="red"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Message" class="black">Message</label>
+                    <textarea asp-for="Message" class="form-control" cols="10" rows="2" placeholder="Enter your message here..." required></textarea>
+                    <span asp-validation-for="Message" class="red"></span>
+                </div>
+                <button type="submit" class="btn-theme">Send Contact Request</button>
+            </form>
+        </section>
+
+    </main>  
+
+
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2034.890630823849!2d18.031957977575072!3d59.334779774616955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f9d7c49b63229%3A0x7f1be5eb46ae60bf!2sKronobergsgatan%2033%2C%20112%2033%20Stockholm!5e0!3m2!1ssv!2sse!4v1709993750046!5m2!1ssv!2sse" width="100%" height="550" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+
+
+

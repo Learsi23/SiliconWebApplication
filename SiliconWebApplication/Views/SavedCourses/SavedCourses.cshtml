@@ -1,0 +1,82 @@
+﻿@model AccountDetailsViewModel
+
+@{
+    ViewData["Title"] = "Saved Courses";
+}
+
+<link rel="stylesheet" href="~/css/SavedCourses.css" asp-append-version="true" />
+
+
+<main class="container">
+    <section class="saved">
+        <partial name="~/Views/Shared/AsideAccount/AsideAccount.cshtml" />
+
+        <div class="infoDetails">
+            <div class="deleteAll">
+                <h2>Saved Items</h2>
+                <form method="post" action="/SavedCourses/DeleteAll">
+                    <button class="btn-delete">
+                        <img src="images/dust-bin.svg" alt="">Delete all
+                    </button>
+                </form>
+
+            </div>
+
+            <div class="chosen-courses">
+                @foreach (var item in Model.SavedCourses)
+                {
+                    <div class="courses-cards">
+                        @if (item.IsBestSeller)
+                        {
+                            <img class="bestSeller" src="~/Images/badge.png" alt="">
+
+                        }
+                        <img class="cardImage" src="~/Images/@item.ImageName" alt="">
+
+                        <form method="post" action="@Url.Action("Delete", "SavedCourses", new { id = item.Id })">
+                            <input type="hidden" name="id" value="@item.Id" />
+                            <button class="courseIcon" type="submit"><img src="~/Images/S.svg" alt=""></button>
+                        </form>
+                        
+
+
+                        @*  <form method="post" action="/SavedCourses/Delete/@(item.Id)">
+                            <button type="submit">
+                                <img class="courseIcon" src="~/Images/S.svg" alt="">
+                            </button>
+                        </form> *@
+                     
+                        <div class="cardText">
+                            <h5>@item.Title</h5>
+                            <p class="text-s">@item.Author</p>
+                            @if (item.Discount > 0)
+                            {
+                                <span class="red">$ @item.Price </span>
+                                <span class="gray">$ @item.Discount </span>
+                            }
+                            else
+                            {
+                                <span class="blue">$ @item.Price</span>
+                            }
+                            <hr>
+                            <div class="watch">
+                                <div class="hours">
+                                    <p class="text-s"><i class="fa-regular fa-clock"></i> @item.Hours hours</p>
+                                </div>
+                                <div class="likes">
+                                    <img src="~/Images/like.svg" alt="">
+                                    <span>@($"{item.LikesNumbers}%")</span>
+                                    <span class="text-s">(@($"{item.LikesProcent}k"))</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                } 
+            </div>
+        </div>
+    </section>
+
+</main>
+
+
+

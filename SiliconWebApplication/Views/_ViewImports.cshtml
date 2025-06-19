@@ -1,0 +1,9 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using SiliconWebApplication.ViewModels
+@using Infrastructure.Entities
+@using Microsoft.AspNetCore.Identity
+@using SiliconWebApplication.ViewModels.Account
+@using SiliconWebApplication.ViewModels.Courses
+@using SiliconWebApplication.Dtos
+@inject UserManager<UserEntity> UserManager
+@inject SignInManager<UserEntity> _signInManager

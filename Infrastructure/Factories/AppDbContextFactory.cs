@@ -9,7 +9,7 @@ public class AppDbContextFactory : IDesignTimeDbContextFactory<AppDbContext>
     public AppDbContext CreateDbContext(string[] args)
     {
         var optionsBuilder = new DbContextOptionsBuilder<AppDbContext>();
-        optionsBuilder.UseSqlServer(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""C:\Users\lears\Cloner Gits\SiliconWebApplication\Infrastructure\Data\Sili_LocalDataBase.mdf"";Integrated Security=True");
+        optionsBuilder.UseSqlServer(@"");
 
         return new AppDbContext(optionsBuilder.Options);
     }
